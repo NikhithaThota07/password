@@ -26,21 +26,36 @@
             height: 20px;
             width: 30px;
             margin: 10px;
+            cursor: pointer;
         }
         input{
             height: 30px;
-            width: 350px;
+            width: 100%;
             border-radius: 5px;
             border: 0;
             font-size: 20px;
+            outline: 0;
         }
     </style>
 </head>
 <body>
     <div class="inputbox">
-    <input type="password" placeholder="password" class="password">
-    <img src="images/closedeye.png" alt="closeeye">
+    <input type="password" placeholder="password" id="password">
+    <img src="images/closedeye.png" id="closeEye">
     </div>
     
+    <script>
+        let closeEye = document.getElementById("closeEye");
+        let password = document.getElementById("password");
+        closeEye.onclick = function(){
+            if(password.type == "password"){
+                password.type = "text";
+                closeEye.src = "images/openeye.jpeg";
+            }else{
+                password.type = "password";
+                closeEye.src = "images/closedeye.png";
+            }
+        }
+    </script>
 </body>
 </html>
